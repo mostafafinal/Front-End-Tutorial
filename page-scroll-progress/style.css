@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 5000px;
+}
+
+.scroll-progress { 
+    width: 0;
+    height: 3px; 
+    background-color: skyblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
