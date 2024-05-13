@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ul { 
+    list-style-type: none;
+}
+
+.tabs { 
+    display: flex;
+    background-color: #ddd;
+    padding: 0;
+    margin: 0;
+    width: 300px;
+    justify-content: space-around;
+    font-size: 25px;
+    transition: 0.2s;
+}
+.tabs li {
+    padding: 20px;
+    color: grey;
+    cursor: pointer;
+}
+.tabs .active,
+.tabs li:hover {
+    background-color: grey;
+    color: white;
+}
+.content {
+    width: 300px;
+    background-color: #808080ba;
+    padding: 15px;
+    font-size: 25px;
+    color: white;
+}
