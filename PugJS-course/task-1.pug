@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="description", content="Learn Pug")
+    title Final Pug
+    link(rel="stylesheet", href="bootstrap.css")
+    link(rel="stylesheet", href="fontawesome.css")
+    link(rel="stylesheet", href="main.css")
+  body
+    .main-container#main
+      h2.main-title My Skills
+      ul.skill-list
+        li PHP
+        li MySQL 
+        li SASS 
+        li Pug
+      p#main I Love 
+        b Pug
+        |  And 
+        b SASS
+      p.main I Love 
+        b Pug
+        |  And 
+        b SASS
+      | This Text Belongs To The Main Div
+    form
+      h2.contact-title Contact Me
+      input.f-c(type="text", name="user", style="background-color: gray")
+      input.f-c(type="email", name="mail")
+      input.f-c(type="text", name="subject")
+      button Send
+      button Reset
+    script(src="js/bootstrap.js")
+    script(src="js/nicescroll.js")
+    script(src="js/main.js")
