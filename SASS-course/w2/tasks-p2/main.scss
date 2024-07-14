@@ -1,0 +1,79 @@
+// Session Task 
+@mixin keyF($anim-name) {
+    @-webkit-keyframes #{$anim-name} {
+        @content;
+    }
+    @keyframes #{$anim-name} {
+        @content;
+    }
+}
+// Using
+@include keyF(fade-in) {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+// Session Practice
+@mixin breakpoints($point){
+    @if $point == mobile {
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if $point == small {
+        @media (min-width: 768px) and (max-width: 991px) {
+            @content;
+        }
+    } @else if $point == medium {
+        @media (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    } @else if $point == large {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+}
+// Using
+.box {
+    @include breakpoints(small) {
+        font-size: 14px;
+    }
+    @include breakpoints(medium) {
+        font-size: 24px;
+    }
+    @include breakpoints(large) {
+        font-size: 36px;
+    }
+}
+
+// Task 1 
+$num: 2;
+$start: 100;
+
+@function double($size) {
+  @return $size * $num;
+}
+@for $i from 1 through 5 {
+    .box-#{$start} {
+        width: $start;
+        height: double($start);
+    }
+    $start: $start + $start;
+}
+
+// Task 2
+@function get-total($values...) {
+    $total: 0;
+    @each $val in $values {
+        $total: $val + $total;
+    }
+    @return $total;
+}
+.box {
+    top: get-total(100, 50, 20);
+    right: get-total(100, 50);
+  }

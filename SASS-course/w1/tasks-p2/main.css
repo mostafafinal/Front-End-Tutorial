@@ -1,0 +1,33 @@
+.school {
+  padding: 20px;
+  /*@if $language == "ar" {
+      direction: rtl;
+  } @else {
+      direction: ltr;
+  }
+  */
+  direction: ltr;
+  margin-left: 20px;
+}
+.school .school-box {
+  padding: 10px;
+}
+.school:hover .school-box {
+  background-color: #eee;
+}
+
+/* Theme Version: 1.0 */
+/* Website Theme Main Color Is: red */
+/* Website Theme Alternate Color Is: blue */
+.class {
+  color: green;
+}
+
+.class {
+  color: red;
+}
+
+.box {
+  background-color: #EEE;
+  text-align: center;
+}

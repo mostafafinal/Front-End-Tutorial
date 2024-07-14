@@ -1,0 +1,214 @@
+// Task 1
+.content {
+    > {
+        .box {
+            padding: 15px;
+            > {
+                .title {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .cat {
+        padding: 15px;
+    }
+    &.permuim {
+        &::before {
+            content: "Premium Box";
+        }
+        &:hover {
+            background-color: #eee;
+        }
+    }
+}
+
+// Task 2
+.class > .child {
+    padding: 10px;
+}
+.class {
+    > {
+        .child {
+            padding: 10px;
+        }
+    }
+}
+.class {
+    & > .child {
+        padding: 10px;
+    }
+}
+
+// Task 3
+%font {
+    font-weight: bold;
+    font-size: 20px;
+}
+.class { 
+    @extend %font;
+}
+.class {
+    font: {
+        weight: bold;
+        size: 20px;
+    }
+}
+
+// Task 4 Explain SCSS code to CSS
+.parent {
+    & + .sibling {
+      margin: auto {
+        top: 10px;
+      }
+      & ~ .last {
+        padding: 10px;
+      }
+    }
+  }
+// Explaination
+// .parent + .sibling {
+//     margin: auto;
+//     margin-top: 10px;
+// }
+// .parent + .sibling ~ .last {
+//     padding: 10px;
+// }
+
+// Task 5
+.widget {
+    background-color: white;
+    padding: 20px;
+  }
+  .main-border {
+    border: 1px solid #CCC
+  }
+  .my-class {
+    @extend .widget;
+    @extend .main-border;
+    font-weight: bold;
+    margin: 20px auto;
+  }
+  
+// Needed Output
+// .widget, .my-class {
+//     background-color: white;
+//     padding: 20px;
+//   }
+//   .main-border, .my-class {
+//     border: 1px solid #CCC;
+//   }
+//   .my-class {
+//     font-weight: bold;
+//     margin: 20px auto;
+//   }
+
+// Task 6
+%widget {
+    background-color: white;
+    padding: 20px;
+}
+%main-border {
+    border: 1px solid #CCC
+}
+.my-class {
+    @extend %widget;
+    @extend %main-border;
+    font-weight: bold;
+    margin: 20px auto;
+}
+// Needed Output
+// .my-class {
+//     background-color: white;
+//     padding: 20px;
+// }
+// .my-class {
+//     border: 1px solid #CCC;
+// }
+// .my-class {
+//     font-weight: bold;
+//     margin: 20px auto;
+// }
+
+
+// Task 7
+$media-xs: 575px;
+.box {
+    h2 {
+    font-size: 20px;
+    }
+    p {
+        @extend h2;
+    }
+}
+@media(max-width: $media-xs) {
+    .box {
+        h2 {
+            font-size: 16px;
+            span {
+                font-weight: bold;
+            }
+        }
+        p span {
+            @extend span;
+        }
+    } 
+}
+
+// Needed Output
+// .box h2, .box p {
+//     font-size: 20px;
+// }
+// @media (max-width: 575px) {
+//     .box h2, .box p {
+//         font-size: 16px;
+//     }
+//     .box h2 span, .box p span {
+//         font-weight: bold;
+//     }
+// }
+
+// Task 8
+$red: #e91e63;
+$green: #009688;
+
+$link-color: $green;
+$link-hover: $red;
+// Do Not Edit Here
+.box a {
+    color: $link-color;
+    &:hover {
+      color: $link-hover;
+    }
+  }
+// Needed Output
+// .box a {
+//     color: #009688;
+//   }
+//   .box a:hover {
+//     color: #e91e63;
+//   }
+
+// Task 9
+// - Project_Folder
+// --- Helpers
+// ------ _vars.scss
+// ------ _functions.scss
+// --- Layout
+// ------ _header.scss
+// ------ _footer.scss
+// main.scss --> @use /Helpers/vars.scss
+// main.scss --> @use /Helpers/functions.scss
+// main.scss --> @use /Layout/header.scss
+// main.scss --> @use /Layout/footer.scss
+
+// Task 9
+.box {
+    font-size: 20px;
+    &-holder {
+        width: 1000px;
+        &-content {
+            margin: auto;
+        }
+    }
+}

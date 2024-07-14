@@ -1,0 +1,135 @@
+@mixin arrow($dir) {
+    content: "";
+    position: absolute;
+    border: 20px solid transparent;
+    @if $dir == "top" { 
+        left: 50%;
+        transform: translateX(-50%);
+        top: -40px;
+        border-bottom-color: red;
+    } @else if $dir == "right" {
+        top: 50%;
+        transform: translateY(-50%);
+        right: -40px;
+        border-left-color: red;
+    } @else if $dir == "bottom" {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -40px;
+        border-top-color: red;
+    } @else if $dir == "left" {
+        top: 50%;
+        transform: translateY(-50%);
+        left: -40px;
+        border-right-color: red;
+    }
+}
+.element {
+    &::before { 
+        @include arrow("top")
+    }
+}
+.item {
+    &::before { 
+        @include arrow("right")
+    }
+}
+.symbol {
+    &::before { 
+        @include arrow("bottom")
+    }
+}
+.sample {
+    &::before { 
+        @include arrow("left")
+    }
+}
+
+// Task 2
+// $grid-cols: 12; // Bootstrap Grid System
+$grid-cols: 16; // My own Grid System
+@for $i from 1 through $grid-cols { 
+    .col-#{$i} {
+        width: percentage($i / $grid-cols);
+    }
+}
+
+// Task 3
+$names:
+    "books" 20px red 18,
+    "games" 30px green 18,
+    "dvds" 20px blue;
+
+@each $name in $names { 
+    .#{nth($name, 1)} {
+        padding: nth($name, 2);
+        font-size: if(length($name) >= 4, #{nth($name, 4)}px, 16px);
+        border-bottom: 2px solid nth($name, 3);
+        color: #444;
+    }
+}
+
+// Task 4
+$init: 1; 
+@while $init <= 5 {
+    .circle-#{$init * 100} {
+        width: $init * 100;
+        height: $init * 100;
+        border-radius: $init * 100 / 2;
+    }
+    $init: $init + 1;
+}
+
+// Task 5
+@for $init from 1 through 5 {
+    .circle-#{$init * 100} {
+        width: $init * 100;
+        height: $init * 100;
+        border-radius: $init * 100 / 2;
+    }
+    $init: $init + 1;
+}
+
+// Task 6
+@mixin placeholder {
+    &.placeholder {
+        @content
+    }
+    &:moz-placeholder {
+        @content
+    }
+    &::-moz-placeholder {
+        @content
+    }
+    &:-ms-input-placeholder {
+        @content
+    }
+    &::-webkit-input-placeholder {
+        @content
+    }
+}
+// Using
+textarea {
+    @include placeholder {
+        color: #777;
+    }
+}
+
+  // Task 7
+@mixin flex-center($val: null) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @if($val) {
+        width: $val;
+    } @else {
+        width: 300px;
+    }
+}
+  // Using
+.box-one {
+    @include flex-center(400px);
+}
+.box-two {
+    @include flex-center;
+}
