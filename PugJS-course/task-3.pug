@@ -1,0 +1,60 @@
+doctype html 
+
+//- String Interpolation
+- const user = { name: 'John', age: 30 };
+div Hello #{user.name} your age is #{user.age}
+
+//- Tag Interpolation
+- const urls = ['http://example.com', 'http://example.org', 'http://example.net'];
+ul
+  each url in urls
+    li #[a(href=url) Tag Url]
+
+//- Basic Mixin
+mixin btns
+  button Label-1
+  button Label-2
+  button Label-3
++btns
+
+//- Mixin With Argument
+mixin card(title, content)
+  div
+    h2=title
+    p=content
++card('Final', 'Testimonial Card')
++card('Finalot', 'Portfolio Card')
++card('Finalota', 'Services Card')
+
+//-Combining Mixins and Interpolations
+mixin user-profile(name, age, bio)
+  .section
+    div Name: #{name}
+    div Age: #{age}
+    div #{bio}
++user-profile("Final", 21, "Frontend Developer")
+
+//- Tag Interpolation With Mixin
+mixin articles(articles)
+  each art in articles
+    ul
+      li Title: #{art.title}
+      li Link: #[a(href=art.url) Read Now!]
+- const articles = [{ title: 'Article 1', url: 'http://example.com/article1' }, { title: 'Article 2', url: 'http://example.com/article2' }, { title: 'Article 3', url: 'http://example.com/article3' }];
++articles(articles)
+
+//- Nested Mixin
+- const myFavFruits = ['Mango', 'Pineapple', 'Grapes', 'Cherry', 'Plum', 'Peach', 'Banana', 'Strawbaeery', 'Watermelon', 'Apricot']
+mixin myFav(fruit)
+  li= fruit
+mixin fruitList(fruits)
+  ul
+    each fruit in fruits
+      +myFav(fruit)
++fruitList(myFavFruits)
+
+//- Conditional Mixin
+mixin notifications(message, type)
+    div(stype=`color: ${type == 'error'? 'red':'green'}`)
++notifications("Please, try again", 'error')
++notifications("Great!, you're in", 'success')
