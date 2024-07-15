@@ -1,0 +1,68 @@
+//- div main div
+//-   //- Buffered Code
+//-   div='Here is how we explain the use of <strong> tag' 
+
+//-   ul
+//-   - for (x=0; x < 10; x++)
+//-     li item
+
+//- Generating a List of Even Numbers
+ul
+  - for (x = 2; x <= 20; x++) 
+    if (x % 2 == 0)
+      li #{x}
+
+//- Displaying Product Information
+- const products = {p1: '10$', p2: '20$', p3: '30$'}
+ul
+  each key in Object.keys(products)
+    - const value = products[key]
+    li #{key} : #{value}
+
+//- Creating a Table of Students' Grades
+- const students = [{name: 'Alice', grade: 'A'}, {name: 'Bob', grade: 'B'}, {name: 'Charlie', grade: 'C'}]
+table
+  tr
+    th Name
+    th Grade
+  each obj in students
+    tr
+      td #{obj.name}
+      td #{obj.grade}
+
+//- Nested Loop to Create a Chess Board
+//- table 
+//-   - for (x = 1; x <= 4; x++)
+//-     tr
+//-       - for (y = 1; y <= 4; y++)
+//-         td(style='width: 50px; height: 50px; background-color: #ddd;')
+//-         td(style='width: 50px; height: 50px; background-color: black;')
+//-     tr
+//-       - for (z = 1; z <= 4; z++)
+//-         td(style='width: 50px; height: 50px; background-color: black;')
+//-         td(style='width: 50px; height: 50px; background-color: #ddd;')
+//- Enhanced Code 
+table
+  - for (row = 0; row < 8; row++)
+    tr
+      - for (col = 0; col < 8; col++)
+        - let isWhite = (row + col) % 2 === 0
+        td(style=`width: 50px; height: 50px; background-color: ${isWhite ? '#ddd' : 'black'};`)
+
+//- Displaying a List of Tasks with Status
+- const tasks = [{ title: 'Task 1', completed: true }, { title: 'Task 2', completed: false }, { title: 'Task 3', completed: true }];
+ul
+  each task in tasks
+    li(class=`${task.completed ? 'completed' : 'pending'}`) #{task.title}
+
+//- Dynamic Dropdown Menu
+- const countries = ['Choose Country', 'USA', 'Canada', 'UK', 'Australia', 'Germany'];
+select
+  each country, index in countries
+    option(selected= country === 'Choose Country' disabled= country === 'Choose Country' hidden= country === 'Choose Country')= country
+
+//- Displaying an Array of Numbers
+- const numbers = [1, 2, 3, 4, 5];
+ol
+  each num in numbers
+    li= num * num
