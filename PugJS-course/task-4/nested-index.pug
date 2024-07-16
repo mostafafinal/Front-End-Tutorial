@@ -1,0 +1,10 @@
+extends nested-base
+append head
+  p Home Page
+block content
+  .home Home Page Content
+block sideBarContent
+  - const homeLists = ['List-1', 'List-2', 'List-3'];
+  ul
+    each list in homeLists
+      li Home Page #{list}

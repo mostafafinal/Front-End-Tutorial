@@ -1,0 +1,17 @@
+//- Inheritance With Nested Blocks
+html
+  head
+    title Basic Inheritance
+  body
+  block head
+    header
+      h2 Oh Mighty!!
+  block sideBar
+    .main Content
+    block sideBarContent
+      p BlaBla Paragraph
+    block content
+      .main Base Content
+  block end
+    footer
+      .copy &copy; 2024 Reserved!

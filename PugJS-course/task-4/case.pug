@@ -1,0 +1,15 @@
+//- Using `case` Statement
+html
+  head
+    title Case Statement Example
+  body
+    - var status = 'error' // change this to 'error' or 'info' to test different cases
+    case status
+      when 'success'
+        p The operation was successful!
+      when 'error'
+        p There was an error with the operation.
+      when 'info'
+        p Here is some information.
+      default
+        p Status unknown.

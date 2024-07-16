@@ -1,0 +1,17 @@
+extends base
+
+block header
+  prepend
+    h2 Custom Prepend Header
+block content
+  p This is the main content area.
+block footer
+  append
+    - var status = 'info'
+    case status
+      when 'success'
+        p The operation was successful!
+      when 'error'
+        p There was an error with the operation.
+      when 'info'
+        p Here is some additional information.
