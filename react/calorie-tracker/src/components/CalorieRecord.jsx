@@ -1,10 +1,19 @@
-function CalorieRecord() {
+import "./CalorieRecord.css";
+
+function CalorieRecord(props) {
+  const month = props.date.toLocaleString("default", { month: "long" });
+  const day = props.date.getDate();
+  const year = props.date.getFullYear();
   return (
-    <ul>
-      <li>340 Calories</li>
-      <li>Beakfast</li>
-      <li>Eggs + Beans</li>
-      <li>March 6, 2024</li>
+    <ul className="parent-list">
+      <li className="date">
+        <div>{month}</div>
+        <div>{day}</div>
+        <div>{year}</div>
+      </li>
+      <li>{props.meal}</li>
+      <li>{props.food}</li>
+      <li>{props.calories}</li>
     </ul>
   );
 }

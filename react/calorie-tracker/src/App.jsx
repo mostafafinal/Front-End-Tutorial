@@ -10,7 +10,11 @@ function App() {
         Now I think that the tiny lagging that happens it's related to the code
         intellisense extension
       </p>
-      <CalorieRecord></CalorieRecord>
+      <CalorieRecord
+        meal="Breakfast"
+        calories="350"
+        food="Eggs"
+        date={new Date("2024-03-06")}></CalorieRecord>
     </div>
   );
 }

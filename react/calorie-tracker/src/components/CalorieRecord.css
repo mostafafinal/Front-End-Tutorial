@@ -1,0 +1,24 @@
+.parent-list {
+  list-style: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin: auto;
+  display: flex;
+  background-color: #ddd;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  li {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: wheat;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 700;
+    &.date {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+}
