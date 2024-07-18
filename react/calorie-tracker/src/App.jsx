@@ -1,4 +1,4 @@
-import CalorieRecord from "./components/CalorieRecord";
+import { RecordListItems, RecordsList } from "./components/RecordList";
 function App() {
   return (
     <div className="App">
@@ -10,11 +10,9 @@ function App() {
         Now I think that the tiny lagging that happens it's related to the code
         intellisense extension
       </p>
-      <CalorieRecord
-        meal="Breakfast"
-        calories="350"
-        food="Eggs"
-        date={new Date("2024-03-06")}></CalorieRecord>
+      <div className="list-wrapper">
+        <RecordListItems records={RecordsList} />
+      </div>
     </div>
   );
 }

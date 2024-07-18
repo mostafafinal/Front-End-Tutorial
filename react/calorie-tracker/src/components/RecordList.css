@@ -1,0 +1,36 @@
+.list-wrapper {
+  padding: 0.5rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.25rem;
+  background-color: rgb(137, 180, 180);
+  .record-list {
+    width: 80%;
+    list-style: none;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin: auto;
+    display: flex;
+    background-color: #ddd;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    &:not(:last-of-type) {
+      margin-bottom: 0.8rem;
+    }
+    li {
+      width: 10rem;
+      text-align: center;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      background-color: rgb(255, 166, 0);
+      color: black;
+      font-size: 1.2rem;
+      font-weight: 700;
+      &.date {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
