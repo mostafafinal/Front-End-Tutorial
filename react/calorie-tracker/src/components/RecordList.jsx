@@ -1,27 +1,27 @@
 import "../components/RecordList.css";
-
+import { useState } from "react";
 const RecordsList = [
   {
     meal: "Breakfast",
-    calories: "350",
+    calories: 350,
     food: "Eggs",
     date: new Date("2024-03-06"),
   },
   {
     meal: "Breakfast",
-    calories: "400",
+    calories: 400,
     food: "Beans",
     date: new Date("2024-03-07"),
   },
   {
     meal: "Breakfast",
-    calories: "300",
+    calories: 300,
     food: "Fava Bean",
     date: new Date("2024-03-08"),
   },
   {
     meal: "Breakfast",
-    calories: "500",
+    calories: 500,
     food: "Chocolate",
     date: new Date("2024-03-09"),
   },
@@ -35,7 +35,10 @@ function RecordListItems({ records }) {
     const month = obj.date.toLocaleString("default", { month: "long" });
     const day = obj.date.getDate();
     const year = obj.date.getFullYear();
-
+    let [currentCalories, setCurrentCalories] = useState(obj.calories);
+    const currentCaloriesHandler = () => {
+      setCurrentCalories((currentCalories += 10));
+    };
     return (
       <ul key={index} className="record-list">
         <li className="date">
@@ -45,7 +48,7 @@ function RecordListItems({ records }) {
         </li>
         <li>{obj.meal}</li>
         <li>{obj.food}</li>
-        <li>{obj.calories}</li>
+        <li onClick={currentCaloriesHandler}>{currentCalories}</li>
       </ul>
     );
   });
