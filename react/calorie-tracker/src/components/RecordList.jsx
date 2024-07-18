@@ -35,9 +35,9 @@ function RecordListItems({ records }) {
     const month = obj.date.toLocaleString("default", { month: "long" });
     const day = obj.date.getDate();
     const year = obj.date.getFullYear();
-    let [currentCalories, setCurrentCalories] = useState(obj.calories);
+    const [currentCalories, setCurrentCalories] = useState(obj.calories);
     const currentCaloriesHandler = () => {
-      setCurrentCalories((currentCalories += 10));
+      setCurrentCalories(currentCalories + 10);
     };
     return (
       <ul key={index} className="record-list">
