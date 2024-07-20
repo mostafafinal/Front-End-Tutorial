@@ -2,33 +2,41 @@ import { useState } from "react";
 import "./CaloriesRecordForm.css";
 function RecordForm() {
   const [maxCaloriesValue, setMaxCaloriesValue] = useState(0);
-  const [dateValue, setDateValue] = useState();
-  const [mealValue, setMealValue] = useState();
-  const [contentValue, setContentValue] = useState();
-  const [caloriesValue, setCaloriesValue] = useState();
+  //   const [dateValue, setDateValue] = useState();
+  //   const [mealValue, setMealValue] = useState();
+  //   const [contentValue, setContentValue] = useState();
+  //   const [caloriesValue, setCaloriesValue] = useState();
+  const [mealRecord, setMealRecord] = useState({});
   const dateChangeHandler = (event) => {
-    setDateValue(event.target.value);
+    setMealRecord({
+      ...mealRecord,
+      date: event.target.value,
+    });
   };
   const mealChangeHandler = (event) => {
-    setMealValue(event.target.value);
+    setMealRecord({
+      ...mealRecord,
+      meal: event.target.value,
+    });
   };
   const contentChangeHandler = (event) => {
-    setContentValue(event.target.value);
+    setMealRecord({
+      ...mealRecord,
+      content: event.target.value,
+    });
   };
   const caloriesChangeHandler = (event) => {
-    setCaloriesValue(event.target.value);
+    setMealRecord({
+      ...mealRecord,
+      calories: event.target.value,
+    });
     if (maxCaloriesValue < event.target.value) {
       setMaxCaloriesValue(event.target.value);
     }
   };
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    console.log({
-      dateValue,
-      mealValue,
-      contentValue,
-      caloriesValue,
-    });
+    console.log(mealRecord);
   };
   return (
     <form onSubmit={onSubmitHandler}>
