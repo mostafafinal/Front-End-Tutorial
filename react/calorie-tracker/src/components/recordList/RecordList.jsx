@@ -1,4 +1,4 @@
-import "../components/RecordList.css";
+import "../recordList/RecordList.css";
 import { useState } from "react";
 const RecordsList = [
   {

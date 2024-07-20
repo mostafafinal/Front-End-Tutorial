@@ -1,7 +1,7 @@
 .parent-list {
   list-style: none;
   padding: 0.5rem;
-  border-radius: 0.25rem;
+  border-radius: 0.7rem;
   margin: auto;
   display: flex;
   background-color: #ddd;
