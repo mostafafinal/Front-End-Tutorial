@@ -1,12 +1,19 @@
 import { useState } from "react";
 import "./CaloriesRecordForm.css";
-function RecordForm() {
+function RecordForm(props) {
+  const [clickNumber, setClickNumber] = useState(0);
   const [maxCaloriesValue, setMaxCaloriesValue] = useState(0);
   //   const [dateValue, setDateValue] = useState();
   //   const [mealValue, setMealValue] = useState();
   //   const [contentValue, setContentValue] = useState();
   //   const [caloriesValue, setCaloriesValue] = useState();
-  const [mealRecord, setMealRecord] = useState({});
+  const DEFAULT_VALUE = {
+    date: "",
+    meal: "",
+    content: "",
+    calories: 0,
+  };
+  const [mealRecord, setMealRecord] = useState(DEFAULT_VALUE);
   const dateChangeHandler = (event) => {
     setMealRecord({
       ...mealRecord,
@@ -37,6 +44,8 @@ function RecordForm() {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     console.log(mealRecord);
+    props.onFormSubmit(mealRecord);
+    setMealRecord(DEFAULT_VALUE);
   };
   return (
     <form onSubmit={onSubmitHandler}>
@@ -51,9 +60,19 @@ function RecordForm() {
         <option>Dinner</option>
       </select>
       <label htmlFor="content">Content:</label>
-      <input onChange={contentChangeHandler} type="text" id="content" />
+      <input
+        onChange={contentChangeHandler}
+        type="text"
+        value={mealRecord.content}
+        id="content"
+      />
       <label htmlFor="calories">Calories</label>
-      <input onChange={caloriesChangeHandler} type="number" id="calories" />
+      <input
+        onChange={caloriesChangeHandler}
+        type="number"
+        value={mealRecord.calories}
+        id="calories"
+      />
       <button>Add Record</button>
     </form>
   );

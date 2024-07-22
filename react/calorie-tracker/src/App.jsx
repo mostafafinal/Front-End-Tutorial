@@ -4,6 +4,9 @@ import {
 } from "./components/recordList/RecordList";
 import RecordForm from "./components/recordForm/recordForm";
 function App() {
+  const formSubmitHandler = (records) => {
+    console.log(records);
+  };
   return (
     <div className="App">
       <h2>
@@ -15,7 +18,7 @@ function App() {
         intellisense extension
       </p>
       <div className="from-wrapper">
-        <RecordForm />
+        <RecordForm onFormSubmit={formSubmitHandler} />
       </div>
       <div className="list-wrapper">
         <RecordListItems records={RecordsList} />
