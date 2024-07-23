@@ -1,14 +1,13 @@
 import { useState } from "react";
 import "./CaloriesRecordForm.css";
 function RecordForm(props) {
-  const [clickNumber, setClickNumber] = useState(0);
   const [maxCaloriesValue, setMaxCaloriesValue] = useState(0);
   //   const [dateValue, setDateValue] = useState();
   //   const [mealValue, setMealValue] = useState();
   //   const [contentValue, setContentValue] = useState();
   //   const [caloriesValue, setCaloriesValue] = useState();
   const DEFAULT_VALUE = {
-    date: "",
+    date: new Date(),
     meal: "",
     content: "",
     calories: 0,
@@ -17,7 +16,7 @@ function RecordForm(props) {
   const dateChangeHandler = (event) => {
     setMealRecord({
       ...mealRecord,
-      date: event.target.value,
+      date: new Date(event.target.value),
     });
   };
   const mealChangeHandler = (event) => {

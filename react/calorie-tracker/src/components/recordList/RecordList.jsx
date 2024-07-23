@@ -1,31 +1,5 @@
 import "../recordList/RecordList.css";
 import { useState } from "react";
-const RecordsList = [
-  {
-    meal: "Breakfast",
-    calories: 350,
-    food: "Eggs",
-    date: new Date("2024-03-06"),
-  },
-  {
-    meal: "Breakfast",
-    calories: 400,
-    food: "Beans",
-    date: new Date("2024-03-07"),
-  },
-  {
-    meal: "Breakfast",
-    calories: 300,
-    food: "Fava Bean",
-    date: new Date("2024-03-08"),
-  },
-  {
-    meal: "Breakfast",
-    calories: 500,
-    food: "Chocolate",
-    date: new Date("2024-03-09"),
-  },
-];
 function RecordListItems({ records }) {
   if (!records || records.length === 0) {
     return <div>No records available</div>;
@@ -35,10 +9,6 @@ function RecordListItems({ records }) {
     const month = obj.date.toLocaleString("default", { month: "long" });
     const day = obj.date.getDate();
     const year = obj.date.getFullYear();
-    const [currentCalories, setCurrentCalories] = useState(obj.calories);
-    const currentCaloriesHandler = () => {
-      setCurrentCalories(currentCalories + 10);
-    };
     return (
       <ul key={index} className="record-list">
         <li className="date">
@@ -47,11 +17,10 @@ function RecordListItems({ records }) {
           <div>{year}</div>
         </li>
         <li>{obj.meal}</li>
-        <li>{obj.food}</li>
-        <li onClick={currentCaloriesHandler}>{currentCalories}</li>
+        <li>{obj.content}</li>
       </ul>
     );
   });
 }
 
-export { RecordListItems, RecordsList };
+export { RecordListItems };

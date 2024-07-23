@@ -11,15 +11,15 @@
     margin: auto;
     display: flex;
     background-color: #ddd;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
     &:not(:last-of-type) {
       margin-bottom: 0.8rem;
     }
     li {
-      width: 10rem;
       text-align: center;
+      width: 12rem;
       cursor: pointer;
       padding: 0.5rem 1rem;
       border-radius: 0.5rem;
@@ -29,6 +29,7 @@
       font-weight: 700;
       &.date {
         display: flex;
+        justify-content: center;
         gap: 0.5rem;
       }
     }
