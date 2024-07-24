@@ -6,6 +6,7 @@ function RecordForm(props) {
   //   const [mealValue, setMealValue] = useState();
   //   const [contentValue, setContentValue] = useState();
   //   const [caloriesValue, setCaloriesValue] = useState();
+
   const DEFAULT_VALUE = {
     date: new Date(),
     meal: "",

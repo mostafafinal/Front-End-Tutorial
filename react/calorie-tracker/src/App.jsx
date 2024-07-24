@@ -3,24 +3,28 @@ import RecordForm from "./components/recordForm/recordForm";
 import { useState } from "react";
 const RecordsList = [
   {
+    id: 1,
     meal: "Breakfast",
     calories: 350,
     content: "Eggs",
     date: new Date("2024-03-06"),
   },
   {
+    id: 2,
     meal: "Breakfast",
     calories: 400,
     content: "Beans",
     date: new Date("2024-03-07"),
   },
   {
+    id: 3,
     meal: "Breakfast",
     calories: 300,
     content: "Fava Bean",
     date: new Date("2024-03-08"),
   },
   {
+    id: 4,
     meal: "Breakfast",
     calories: 500,
     content: "Chocolate",
@@ -29,9 +33,14 @@ const RecordsList = [
 ];
 function App() {
   const [recordsList, setRecordList] = useState(RecordsList);
+  const [nextID, setNextID] = useState(5);
   const formSubmitHandler = (rec) => {
-    setRecordList([...recordsList, rec]);
-    console.log(rec);
+    const record = {
+      ...rec,
+      id: nextID,
+    };
+    setNextID((lastValue) => lastValue + 1);
+    setRecordList((prevRecords) => [record, ...prevRecords]);
   };
   return (
     <div className="App">

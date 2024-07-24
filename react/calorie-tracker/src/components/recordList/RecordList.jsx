@@ -1,16 +1,14 @@
 import "../recordList/RecordList.css";
-import { useState } from "react";
 function RecordListItems({ records }) {
   if (!records || records.length === 0) {
     return <div>No records available</div>;
   }
-
-  return records.map((obj, index) => {
+  return records.map((obj) => {
     const month = obj.date.toLocaleString("default", { month: "long" });
     const day = obj.date.getDate();
     const year = obj.date.getFullYear();
     return (
-      <ul key={index} className="record-list">
+      <ul key={obj.id} className="record-list">
         <li className="date">
           <div>{month}</div>
           <div>{day}</div>
