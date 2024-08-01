@@ -1,0 +1,16 @@
+ul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  .list-title {
+    background-color: #ccc;
+    border-radius: 10px;
+    margin-top: 0;
+    width: clamp(10rem, 2rem + 2vw, 15rem);
+  }
+  li {
+  }
+}

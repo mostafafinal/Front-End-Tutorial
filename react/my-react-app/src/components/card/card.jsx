@@ -1,4 +1,5 @@
 import "../card/card.css";
+import PropTypes from "prop-types";
 function Card(props) {
   return (
     <>
@@ -13,4 +14,14 @@ function Card(props) {
   );
 }
 
+Card.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  content: PropTypes.string,
+};
+Card.defaultProps = {
+  image: "No Image",
+  title: "Card Title",
+  content: "Card Content",
+};
 export default Card;
