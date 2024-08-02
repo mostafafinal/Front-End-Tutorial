@@ -5,11 +5,12 @@
 // import List from "./components/list/food";
 // import Ouch from "./components/button";
 // import Counter from "./components/counter/counter";
-import Form from "./components/form";
+// import Form from "./components/form";
+import ColorPicker from "./components/colorpicker/colorpicker";
 function App() {
   return (
     <>
-      <Form />
+      <ColorPicker />
     </>
   );
 }
