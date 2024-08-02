@@ -4,12 +4,12 @@
 // import Card from "./components/card/card";
 // import List from "./components/list/food";
 // import Ouch from "./components/button";
-import Counter from "./components/counter/counter";
-
+// import Counter from "./components/counter/counter";
+import Form from "./components/form";
 function App() {
   return (
     <>
-      <Counter />
+      <Form />
     </>
   );
 }
