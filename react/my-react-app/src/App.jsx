@@ -6,11 +6,13 @@
 // import Ouch from "./components/button";
 // import Counter from "./components/counter/counter";
 // import Form from "./components/form";
-import ColorPicker from "./components/colorpicker/colorpicker";
+// import ColorPicker from "./components/colorpicker/colorpicker";
+// import MyCar from "./components/mycar";
+import Fruits from "./components/fruits";
 function App() {
   return (
     <>
-      <ColorPicker />
+      <Fruits />
     </>
   );
 }
