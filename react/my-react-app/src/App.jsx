@@ -8,11 +8,11 @@
 // import Form from "./components/form";
 // import ColorPicker from "./components/colorpicker/colorpicker";
 // import MyCar from "./components/mycar";
-import Fruits from "./components/fruits";
+import Car from "./components/car.jsx";
 function App() {
   return (
     <>
-      <Fruits />
+      <Car />
     </>
   );
 }
