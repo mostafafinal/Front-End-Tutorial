@@ -1,44 +1,44 @@
 import { useState } from "react";
 function Car() {
-  const [mycar, setMyCar] = useState([]);
-  const [yaerMade, setYearMade] = useState(new Date().getFullYear());
+  const [myCar, setMyCar] = useState([]);
+  const [carYear, setCarYear] = useState(new Date().getFullYear());
   const [carName, setCarName] = useState("");
   const [carModel, setCarModel] = useState("");
+
+  // Handlers
   const btnClickHandler = () => {
     const newCar = {
+      year: carYear,
       name: carName,
       model: carModel,
-      year: yaerMade,
     };
     setMyCar((c) => [...c, newCar]);
-    setYearMade(new Date().getFullYear());
+    setCarYear(new Date().getFullYear());
     setCarName("");
     setCarModel("");
   };
-
+  const removeCarClickHandler = (index) =>
+    setMyCar((c) => c.filter((_, i) => i !== index));
+  const carYearChangeHandler = (event) => {
+    setCarYear(event.target.value);
+  };
   const carNameChangeHandler = (event) => {
     setCarName(event.target.value);
   };
   const carModelChangeHandler = (event) => {
     setCarModel(event.target.value);
   };
-  const yearMadeChangeHandler = (event) => {
-    setYearMade(event.target.value);
-  };
-
   return (
     <div>
-      <h2>List of Car Objects</h2>
+      <h1>List of Car Objects</h1>
       <ul>
-        {mycar.map((car, index) => (
-          <li key={index}>
-            {car.year}
-            {car.name}
-            {car.model}
+        {myCar.map((car, index) => (
+          <li key={index} onClick={() => removeCarClickHandler(index)}>
+            {car.year} {car.name} {car.model}
           </li>
         ))}
       </ul>
-      <input type="number" value={yaerMade} onChange={yearMadeChangeHandler} />
+      <input type="number" value={carYear} onChange={carYearChangeHandler} />
       <input
         type="text"
         placeholder="Enter Car Name"
