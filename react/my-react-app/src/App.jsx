@@ -8,11 +8,12 @@
 // import Form from "./components/form";
 // import ColorPicker from "./components/colorpicker/colorpicker";
 // import MyCar from "./components/mycar";
-import Car from "./components/car.jsx";
+// import Car from "./components/car.jsx";
+import ToDo from "./components/todo/todo.jsx";
 function App() {
   return (
     <>
-      <Car />
+      <ToDo />
     </>
   );
 }
