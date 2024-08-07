@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clear {
+  clear: both;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f4f7;
+}
+
+.content-container {
+  background-color: #f2f4f7;
+  min-height: 640px;
+  margin: 0 461.5px 0 461.5px;
+  padding-top: 99px;
+}
+
+.fb-content,
+.fb-login {
+  float: left;
+}
+
+.fb-content {
+  width: 580px;
+  padding: 112px 0 16px;
+  img {
+    display: block;
+    margin: -28px;
+    width: 320.94px;
+    line-height: 32px;
+    padding-bottom: 16px;
+  }
+  p {
+    font-size: 28px;
+    padding-bottom: 20px;
+    width: 500px;
+  }
+}
+.fb-login {
+  width: 396px;
+
+  form {
+    padding: 15px;
+    margin-top: 40px;
+    text-align: center;
+    background-color: white;
+    input {
+      display: block;
+      width: 90%;
+      padding: 14px 16px;
+      margin: 12px 0 12px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      &::placeholder {
+        font-size: 18px;
+        color: #ccc;
+      }
+    }
+    hr {
+      margin: 20px 16px;
+    }
+    button {
+      margin: 6px 0 6px 0;
+      padding: 14px 16px;
+      &.log-btn {
+        width: 99%;
+        background-color: #1877f2;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border: none;
+        border-radius: 8px;
+        padding: 0 16px;
+        line-height: 48px;
+        margin-bottom: 16px;
+      }
+      &.new-btn {
+        width: 55%;
+        background-color: #42b72a;
+        color: white;
+        font-weight: bold;
+        font-size: 17px;
+        border: none;
+        border-radius: 8px;
+      }
+    }
+    .forget {
+      font-size: 14px;
+    }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  p {
+    margin-top: 28px;
+    text-align: center;
+    a {
+      font-weight: bold;
+      color: black;
+    }
+  }
+}
+
+footer {
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 276px 0 276px;
+  font-size: 12px;
+  .langs {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    a {
+      padding-left: 10px;
+      color: #737373;
+    }
+    button {
+      font-size: 17px;
+      width: 30px;
+      height: 20px;
+    }
+  }
+  hr {
+    margin-bottom: 8px;
+  }
+  .links {
+    margin-left: -20px;
+    width: 100%;
+    a {
+      line-height: 1.6;
+      padding-left: 20px;
+      color: #737373;
+    }
+  }
+  .copyright {
+    margin: 20px 0 0px 0;
+    color: #737373;
+  }
+}
