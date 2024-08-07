@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registeration</title>
+  </head>
+  <body>
+    <form action="./thank-you.html" method="get">
+      <input type="text" name="userid" hidden />
+      <br />
+      <input type="text" name="firstname" required placeholder="firstname" />
+      <br />
+      <input type="text" name="lastname" required placeholder="lastname" />
+      <br />
+      <input type="email" name="email" required placeholder="email" />
+      <br />
+      <input type="password" name="password" placeholder="password" />
+      <br />
+      <input
+        type="password"
+        name="passwordrpeat"
+        placeholder="Repeat Password" />
+      <br />
+      <input type="date" name="birth" />
+      <br />
+      <input type="file" name="userimg" />
+      <br />
+      <input type="radio" name="gender" value="m" id="male" />
+      <label for="male">Male</label>
+      <br />
+      <input type="radio" name="gender" value="f" id="female" />
+      <label for="female">Female</label>
+      <br />
+      <select name="faculty" value="">
+        <option value="" hidden>Your Faculty</option>
+        <option value="Law">Law</option>
+        <option value="Arts">Arts</option>
+        <option value="Engineering">Engineering</option>
+        <option value="CS">CS</option>
+      </select>
+      <br />
+      <label>Interests</label>
+      <br />
+      <input type="checkbox" name="programming" />
+      <label for="programming">programming</label>
+      <br />
+      <input type="checkbox" name="reading" />
+      <label for="reading">reading</label>
+      <br />
+      <input type="checkbox" name="swimming" />
+      <label for="swimming">swimming</label>
+      <br />
+      <textarea name="aboutuser" placeholder="About You" rows="5"></textarea>
+      <br />
+      <input type="checkbox" name="terms" required />
+      <label for="terms"
+        ><a href="#" target="_blank"
+          >I agree with terms and conditions</a
+        ></label
+      >
+      <br />
+      <input type="submit" value="Submit" />
+      <input type="reset" value="ٌReset" />
+    </form>
+  </body>
+</html>
