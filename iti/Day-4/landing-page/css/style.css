@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin-left: 90px;
+  margin-right: 90px;
+  padding: 70px 0;
+  background-color: #f89422;
+}
+
+.clear {
+  clear: both;
+}
+
+/* Start Header */
+header {
+  /* background-color: #f89422; */
+  .main {
+    margin: auto;
+    width: 80%;
+  }
+}
+
+.image {
+  float: left;
+  width: calc(100% / 3);
+  .avatar {
+    margin: auto;
+    width: 300px;
+    border-radius: 50%;
+    .me {
+      max-height: 100%;
+      max-width: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.person {
+  width: calc(100% - (100% / 3));
+  float: right;
+  .content {
+    width: 715px;
+    margin: 50px 85px 0;
+    h2 {
+      font-size: 105px;
+      width: fit-content;
+    }
+    .title {
+      width: fit-content;
+      font-weight: bold;
+      margin-top: 5px;
+      font-size: 25px;
+    }
+    .description {
+      margin: 10px 0 10px;
+      line-height: 1.6;
+      width: 620px;
+    }
+  }
+}
+/* End Header */
+
+/* Start Aside */
+.main-content {
+  .f-side {
+    float: left;
+    width: calc(100% / 3);
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 35px;
+    }
+    .contact {
+      margin: auto;
+      width: 290px;
+      li {
+        font-size: 20px;
+        margin-bottom: 10px;
+        i {
+          padding-right: 5px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .s-side {
+    float: right;
+    width: calc(100% - (100% / 3));
+    .side-container:not(:first-child) {
+      margin-top: 30px;
+    }
+    h2 {
+      font-size: 36px;
+      width: fit-content;
+      padding: 0 90px 0 25px;
+      background-color: white;
+      margin-bottom: 20px;
+    }
+    .content {
+      .project {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      .description {
+        margin-bottom: 5px;
+        width: 600px;
+      }
+    }
+  }
+}
+/* End Aside */
