@@ -48,13 +48,14 @@ header {
 }
 
 .person {
+  font-family: "Poppins", system-ui;
   width: calc(100% - (100% / 3));
   float: right;
   .content {
     width: 715px;
     margin: 50px 85px 0;
     h2 {
-      font-size: 105px;
+      font-size: 87px;
       width: fit-content;
     }
     .title {
@@ -74,13 +75,20 @@ header {
 
 /* Start Aside */
 .main-content {
+  .container {
+    background-color: white;
+  }
   .f-side {
     float: left;
     width: calc(100% / 3);
+    .f-container:not(:first-child) {
+      margin-top: 30px;
+    }
     h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 35px;
+      font-family: "Poppins", system-ui;
     }
     .contact {
       margin: auto;
@@ -94,31 +102,131 @@ header {
         }
       }
     }
+    .langs {
+      .prog {
+        font-family: "Poppins", system-ui;
+        position: relative;
+        height: 30px;
+        background-color: #ccc;
+        &::after {
+          position: absolute;
+          content: "";
+          height: 100%;
+        }
+        &:nth-child(2):after {
+          width: 90%;
+          background-color: #f89422;
+        }
+        &:nth-child(4):after {
+          width: 70%;
+          background-color: skyblue;
+        }
+        &:nth-child(6):after {
+          width: 60%;
+          background-color: red;
+        }
+      }
+      .skill {
+        margin-right: 10px;
+        position: relative;
+        display: inline-block;
+        width: 59px;
+        height: 59px;
+        border-radius: 50%;
+        background: conic-gradient(#f89422 323deg, #ccc 0deg);
+        &::after {
+          content: "AI";
+          position: relative;
+          background-color: white;
+          border-radius: 50%;
+          padding: 13px;
+          left: 10.1%;
+          top: 31.5%;
+        }
+        &:nth-child(2) {
+          background: conic-gradient(#23c0f0 226deg, #ccc 258deg);
+        }
+        &:nth-child(3) {
+          background: conic-gradient(#e9442e 154deg, #ccc 229deg);
+        }
+        &:nth-child(4) {
+          background: conic-gradient(rgb(255, 208, 0) 57deg, #ccc 82deg);
+        }
+      }
+    }
+    .social {
+      a {
+        margin-right: 42px;
+      }
+      position: relative;
+      i {
+        font-size: 45px;
+        &.fb {
+          color: #23c0f0;
+        }
+        &.gog {
+          color: #e9442e;
+        }
+      }
+      span {
+        position: relative;
+        bottom: 10px;
+        left: 7px;
+      }
+    }
+  }
+  .s-container {
+    margin-left: 7%;
+    font-family: "Poppins", system-ui;
   }
   .s-side {
     float: right;
     width: calc(100% - (100% / 3));
-    .side-container:not(:first-child) {
+    .s-container:not(:first-child) {
       margin-top: 30px;
     }
     h2 {
       font-size: 36px;
       width: fit-content;
       padding: 0 90px 0 25px;
-      background-color: white;
+      background-color: #f89422;
       margin-bottom: 20px;
     }
     .content {
       .project {
         font-weight: bold;
-        font-size: 18px;
+        font-size: 24px;
         margin-bottom: 5px;
       }
       .description {
         margin-bottom: 5px;
-        width: 600px;
+        width: 930px;
+        font-size: 22px;
       }
     }
   }
 }
 /* End Aside */
+
+footer {
+  position: relative;
+  background-color: #e9442e;
+  margin-top: 40px;
+  height: 30px;
+  &::before {
+    position: relative;
+    content: "";
+    padding: 3px 384px 10px 231px;
+    left: 32%;
+    bottom: -3px;
+    background-color: #f89422;
+  }
+  &::after {
+    position: relative;
+    content: "";
+    padding: 3px 384px 10px 231px;
+    left: 32%;
+    bottom: -3px;
+    background-color: #23c0f0;
+  }
+}
